@@ -1,0 +1,29 @@
+digraph elm {
+  layout=circo
+  bgcolor=transparent
+
+  node [
+    shape=box
+    style="filled,rounded"
+    fontname="Fira Sans"
+    fontsize=14
+    width=1.5
+    height=0.6
+  ]
+
+  edge [
+    color=darkgray
+    penwidth=2
+    arrowsize=0.8
+  ]
+
+  State [fillcolor="orange", root=true]
+  View [fillcolor="teal", fontcolor=white]
+  "Event Handler" [fillcolor="gray", fontcolor=white]
+  Update [fillcolor="blue", fontcolor=white]
+
+  State -> View
+  View -> "Event Handler"
+  "Event Handler" -> Update
+  Update -> State
+}

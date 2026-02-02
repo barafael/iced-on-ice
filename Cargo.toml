@@ -1,0 +1,27 @@
+[package]
+name = "iced-on-ice"
+version = "0.1.0"
+edition = "2024"
+
+[dependencies]
+ron = "0.12"
+serde = { version = "1", features = ["derive"] }
+humansize = "2"
+iced = { version = "0.14", features = [
+  "highlighter",
+  "markdown",
+  "tokio",
+  "wayland",
+  "x11",
+] }
+iced_anim = { version = "0.3", features = ["widgets"] }
+reqwest = "0.13"
+lucide-icons = { version = "0.563.0", features = ["iced"] }
+strum = { version = "0.27", features = ["derive"] }
+rotalubat = "1.0.3"
+
+[profile.release]
+opt-level = "s"
+strip = true
+lto = true
+codegen-units = 1
