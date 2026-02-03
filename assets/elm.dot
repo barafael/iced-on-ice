@@ -5,13 +5,14 @@ digraph elm {
   node [
     shape=box
     style="filled,rounded"
-    fontname="Fira Sans"
+    fontname="Courier"
     fontsize=14
     width=1.5
     height=0.6
   ]
 
   edge [
+    fontname="Courier"
     color=darkgray
     penwidth=2
     arrowsize=0.8
@@ -19,11 +20,23 @@ digraph elm {
 
   State [fillcolor="orange", root=true]
   View [fillcolor="teal", fontcolor=white]
-  "Event Handler" [fillcolor="gray", fontcolor=white]
+  "Listen for\nevents" [fillcolor="gray", fontcolor=white]
   Update [fillcolor="blue", fontcolor=white]
 
-  State -> View
-  View -> "Event Handler"
-  "Event Handler" -> Update
-  Update -> State
+  State -> View [
+    label="render"
+    color=teal
+  ]
+  View -> "Listen for\nevents" [
+    label="install"
+    color=teal
+  ]
+  "Listen for\nevents" -> Update [
+    label="Message"
+    color=teal
+  ]
+  Update -> State [
+    label="mutate"
+    color=teal
+  ]
 }

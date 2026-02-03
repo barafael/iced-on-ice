@@ -23,6 +23,9 @@ const ICED_LOGO: &[u8] = include_bytes!("../assets/iced-logo.svg");
 
 const TEXT_SIZE: u32 = 22;
 const CODE_SIZE: u32 = 20;
+const ORANGE: Color = Color::from_rgb(1.0, 0.4, 0.0);
+
+const ELM_CIRCLE_OF_LIFE: &[u8] = include_bytes!("../assets/elm.svg");
 
 #[derive(Debug, Clone, Copy, PartialEq, Eq, Default, Display, EnumIter, Serialize)]
 pub enum Mode {
@@ -353,7 +356,7 @@ impl App {
         let title = text(self.screen.to_string())
             .size(28)
             .font(FIRA_MONO)
-            .color(Color::from_rgb(1.0, 0.6, 0.2));
+            .color(ORANGE);
 
         let content: Element<Message> = match self.screen {
             Screen::Title => self.view_title_screen(),
@@ -371,6 +374,15 @@ impl App {
 
         let nav = self.view_navigation();
         let nav_bar = container(nav).center_x(iced::Fill).padding(20);
+
+        // Orange stripe at the top
+        let orange_stripe =
+            container(space().height(6))
+                .width(iced::Fill)
+                .style(|_| container::Style {
+                    background: Some(ORANGE.into()),
+                    ..Default::default()
+                });
 
         let offset = *self.slide_offset.value();
         let main_content = container(
@@ -390,7 +402,11 @@ impl App {
                 .on_update(Message::SlideOffset)
                 .into();
 
-        let layout = column![container(animated_content).height(iced::Fill), nav_bar];
+        let layout = column![
+            orange_stripe,
+            container(animated_content).height(iced::Fill),
+            nav_bar
+        ];
 
         container(layout)
             .width(iced::Fill)
@@ -458,9 +474,7 @@ impl App {
             column![
                 self.md_container(&self.md_intro),
                 space().height(20),
-                svg(svg::Handle::from_memory(include_bytes!(
-                    "../assets/elm.svg"
-                ))),
+                svg(svg::Handle::from_memory(ELM_CIRCLE_OF_LIFE)).height(320),
                 space().height(20),
             ]
             .align_x(iced::Alignment::Center),

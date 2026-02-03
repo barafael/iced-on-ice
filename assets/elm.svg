@@ -12,49 +12,54 @@
 <g id="node1" class="node">
 <title>State</title>
 <path fill="orange" stroke="black" d="M210.59,-43.2C210.59,-43.2 126.59,-43.2 126.59,-43.2 120.59,-43.2 114.59,-37.2 114.59,-31.2 114.59,-31.2 114.59,-12 114.59,-12 114.59,-6 120.59,0 126.59,0 126.59,0 210.59,0 210.59,0 216.59,0 222.59,-6 222.59,-12 222.59,-12 222.59,-31.2 222.59,-31.2 222.59,-37.2 216.59,-43.2 210.59,-43.2"/>
-<text xml:space="preserve" text-anchor="middle" x="168.59" y="-16.92" font-family="Fira Sans" font-size="14.00">State</text>
+<text xml:space="preserve" text-anchor="middle" x="168.59" y="-16.17" font-family="Courier,monospace" font-size="14.00">State</text>
 </g>
 <!-- View -->
 <g id="node2" class="node">
 <title>View</title>
 <path fill="teal" stroke="black" d="M96,-157.79C96,-157.79 12,-157.79 12,-157.79 6,-157.79 0,-151.79 0,-145.79 0,-145.79 0,-126.59 0,-126.59 0,-120.59 6,-114.59 12,-114.59 12,-114.59 96,-114.59 96,-114.59 102,-114.59 108,-120.59 108,-126.59 108,-126.59 108,-145.79 108,-145.79 108,-151.79 102,-157.79 96,-157.79"/>
-<text xml:space="preserve" text-anchor="middle" x="54" y="-131.52" font-family="Fira Sans" font-size="14.00" fill="white">View</text>
+<text xml:space="preserve" text-anchor="middle" x="54" y="-130.77" font-family="Courier,monospace" font-size="14.00" fill="white">View</text>
 </g>
 <!-- State&#45;&gt;View -->
 <g id="edge1" class="edge">
 <title>State&#45;&gt;View</title>
-<path fill="none" stroke="darkgray" stroke-width="2" d="M146.5,-43.69C128.66,-61.53 103.4,-86.79 83.78,-106.41"/>
-<polygon fill="darkgray" stroke="darkgray" stroke-width="2" points="81.84,-104.39 78.17,-112.02 85.8,-108.35 81.84,-104.39"/>
+<path fill="none" stroke="teal" stroke-width="2" d="M146.5,-43.69C128.66,-61.53 103.4,-86.79 83.78,-106.41"/>
+<polygon fill="teal" stroke="teal" stroke-width="2" points="81.84,-104.39 78.17,-112.02 85.8,-108.35 81.84,-104.39"/>
+<text xml:space="preserve" text-anchor="middle" x="94.89" y="-77.5" font-family="Courier,monospace" font-size="14.00">render</text>
 </g>
-<!-- Event Handler -->
+<!-- Listen for\nevents -->
 <g id="node3" class="node">
-<title>Event Handler</title>
+<title>Listen for\nevents</title>
 <path fill="gray" stroke="black" d="M210.59,-272.38C210.59,-272.38 126.59,-272.38 126.59,-272.38 120.59,-272.38 114.59,-266.38 114.59,-260.38 114.59,-260.38 114.59,-241.18 114.59,-241.18 114.59,-235.18 120.59,-229.18 126.59,-229.18 126.59,-229.18 210.59,-229.18 210.59,-229.18 216.59,-229.18 222.59,-235.18 222.59,-241.18 222.59,-241.18 222.59,-260.38 222.59,-260.38 222.59,-266.38 216.59,-272.38 210.59,-272.38"/>
-<text xml:space="preserve" text-anchor="middle" x="168.59" y="-246.11" font-family="Fira Sans" font-size="14.00" fill="white">Event Handler</text>
+<text xml:space="preserve" text-anchor="middle" x="168.59" y="-253.23" font-family="Courier,monospace" font-size="14.00" fill="white">Listen for</text>
+<text xml:space="preserve" text-anchor="middle" x="168.59" y="-237.48" font-family="Courier,monospace" font-size="14.00" fill="white">events</text>
 </g>
-<!-- View&#45;&gt;Event Handler -->
+<!-- View&#45;&gt;Listen for\nevents -->
 <g id="edge2" class="edge">
-<title>View&#45;&gt;Event Handler</title>
-<path fill="none" stroke="darkgray" stroke-width="2" d="M76.09,-158.29C93.93,-176.12 119.19,-201.38 138.81,-221"/>
-<polygon fill="darkgray" stroke="darkgray" stroke-width="2" points="136.79,-222.94 144.42,-226.62 140.75,-218.98 136.79,-222.94"/>
+<title>View&#45;&gt;Listen for\nevents</title>
+<path fill="none" stroke="teal" stroke-width="2" d="M76.09,-158.29C93.93,-176.12 119.19,-201.38 138.81,-221"/>
+<polygon fill="teal" stroke="teal" stroke-width="2" points="136.79,-222.94 144.42,-226.62 140.75,-218.98 136.79,-222.94"/>
+<text xml:space="preserve" text-anchor="middle" x="83.83" y="-192.09" font-family="Courier,monospace" font-size="14.00">install</text>
 </g>
 <!-- Update -->
 <g id="node4" class="node">
 <title>Update</title>
 <path fill="blue" stroke="black" d="M325.18,-157.79C325.18,-157.79 241.18,-157.79 241.18,-157.79 235.18,-157.79 229.18,-151.79 229.18,-145.79 229.18,-145.79 229.18,-126.59 229.18,-126.59 229.18,-120.59 235.18,-114.59 241.18,-114.59 241.18,-114.59 325.18,-114.59 325.18,-114.59 331.18,-114.59 337.18,-120.59 337.18,-126.59 337.18,-126.59 337.18,-145.79 337.18,-145.79 337.18,-151.79 331.18,-157.79 325.18,-157.79"/>
-<text xml:space="preserve" text-anchor="middle" x="283.18" y="-131.52" font-family="Fira Sans" font-size="14.00" fill="white">Update</text>
+<text xml:space="preserve" text-anchor="middle" x="283.18" y="-130.77" font-family="Courier,monospace" font-size="14.00" fill="white">Update</text>
 </g>
-<!-- Event Handler&#45;&gt;Update -->
+<!-- Listen for\nevents&#45;&gt;Update -->
 <g id="edge3" class="edge">
-<title>Event Handler&#45;&gt;Update</title>
-<path fill="none" stroke="darkgray" stroke-width="2" d="M190.69,-228.69C208.52,-210.85 233.78,-185.59 253.4,-165.97"/>
-<polygon fill="darkgray" stroke="darkgray" stroke-width="2" points="255.34,-168 259.02,-160.36 251.38,-164.04 255.34,-168"/>
+<title>Listen for\nevents&#45;&gt;Update</title>
+<path fill="none" stroke="teal" stroke-width="2" d="M190.69,-228.69C208.52,-210.85 233.78,-185.59 253.4,-165.97"/>
+<polygon fill="teal" stroke="teal" stroke-width="2" points="255.34,-168 259.02,-160.36 251.38,-164.04 255.34,-168"/>
+<text xml:space="preserve" text-anchor="middle" x="198.42" y="-199.78" font-family="Courier,monospace" font-size="14.00">Message</text>
 </g>
 <!-- Update&#45;&gt;State -->
 <g id="edge4" class="edge">
 <title>Update&#45;&gt;State</title>
-<path fill="none" stroke="darkgray" stroke-width="2" d="M261.09,-114.1C243.25,-96.26 217.99,-71 198.37,-51.38"/>
-<polygon fill="darkgray" stroke="darkgray" stroke-width="2" points="200.4,-49.44 192.76,-45.77 196.44,-53.4 200.4,-49.44"/>
+<path fill="none" stroke="teal" stroke-width="2" d="M261.09,-114.1C243.25,-96.26 217.99,-71 198.37,-51.38"/>
+<polygon fill="teal" stroke="teal" stroke-width="2" points="200.4,-49.44 192.76,-45.77 196.44,-53.4 200.4,-49.44"/>
+<text xml:space="preserve" text-anchor="middle" x="209.48" y="-85.19" font-family="Courier,monospace" font-size="14.00">mutate</text>
 </g>
 </g>
 </svg>
