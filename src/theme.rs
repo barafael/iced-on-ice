@@ -69,18 +69,6 @@ impl text::Catalog for AppTheme {
     }
 }
 
-impl rule::Catalog for AppTheme {
-    type Class<'a> = <Theme as rule::Catalog>::Class<'a>;
-
-    fn default<'a>() -> Self::Class<'a> {
-        <Theme as rule::Catalog>::default()
-    }
-
-    fn style(&self, class: &Self::Class<'_>) -> rule::Style {
-        self.0.style(class)
-    }
-}
-
 impl checkbox::Catalog for AppTheme {
     type Class<'a> = <Theme as checkbox::Catalog>::Class<'a>;
 
@@ -90,6 +78,18 @@ impl checkbox::Catalog for AppTheme {
 
     fn style(&self, class: &Self::Class<'_>, status: checkbox::Status) -> checkbox::Style {
         self.0.style(class, status)
+    }
+}
+
+impl rule::Catalog for AppTheme {
+    type Class<'a> = <Theme as rule::Catalog>::Class<'a>;
+
+    fn default<'a>() -> Self::Class<'a> {
+        <Theme as rule::Catalog>::default()
+    }
+
+    fn style(&self, class: &Self::Class<'_>) -> rule::Style {
+        self.0.style(class)
     }
 }
 
