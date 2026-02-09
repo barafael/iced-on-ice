@@ -37,8 +37,7 @@ impl App {
                 )
                 .size(self.sz(TEXT_SIZE)),
             ]
-            .spacing(self.sp(8.0))
-            .padding(self.sp(30.0)),
+            .spacing(self.sp(8.0)),
         )
         .into()
     }

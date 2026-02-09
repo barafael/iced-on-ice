@@ -42,8 +42,7 @@ impl App {
                 space().height(self.sp(12.0)),
                 button("🚨 Panic!").on_press(Message::PanicChaos),
             ]
-            .spacing(self.sp(8.0))
-            .padding(self.sp(30.0)),
+            .spacing(self.sp(8.0)),
         )
         .into()
     }

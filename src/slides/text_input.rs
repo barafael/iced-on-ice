@@ -28,8 +28,7 @@ impl App {
                 text!("Input Changed messages: {}", self.input_changes).size(self.sz(TEXT_SIZE)),
                 text!("Input Submitted messages: {}", self.input_submits).size(self.sz(TEXT_SIZE)),
             ]
-            .spacing(self.sp(8.0))
-            .padding(self.sp(30.0)),
+            .spacing(self.sp(8.0)),
         )
         .into()
     }

@@ -60,8 +60,7 @@ impl App {
                     .size(self.sz(TEXT_SIZE - 4))
                     .color(SUBTITLE_COLOR),
             ]
-            .spacing(self.sp(8.0))
-            .padding(self.sp(30.0)),
+            .spacing(self.sp(8.0)),
         )
         .into()
     }
@@ -77,8 +76,7 @@ impl App {
                 space().height(self.sp(8.0)),
                 text("The View can read state but never modify it.").size(self.sz(TEXT_SIZE)),
             ]
-            .spacing(self.sp(8.0))
-            .padding(self.sp(30.0)),
+            .spacing(self.sp(8.0)),
         )
         .into()
     }

@@ -29,7 +29,7 @@ impl App {
                 detail("Container for positioning, scrollable for overflow."),
                 space().height(self.sp(12.0)),
                 bullet("To feed messages from the external world, use subscriptions"),
-                detail("Subscriptions just generate Messages"),
+                detail("Subscriptions just generate Messages."),
             ]
             .spacing(self.sp(4.0))
             .padding(self.sp(20.0)),

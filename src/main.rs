@@ -513,10 +513,10 @@ impl App {
         nav_row.into()
     }
 
-    /// Scale factor based on window size relative to 800×600 base.
+    /// Scale factor based on window size relative to 1024×768 base.
     pub fn scale(&self) -> f32 {
         let (w, h) = self.canvas_size;
-        (w / 800.0).min(h / 600.0).max(0.5)
+        (w / 1024.0).min(h / 768.0).max(0.5)
     }
 
     /// Scale a pixel size (for text sizes, icon sizes, etc).

@@ -36,8 +36,7 @@ impl App {
                 .spacing(self.sp(15.0))
                 .align_y(iced::Alignment::Center),
             ]
-            .spacing(self.sp(8.0))
-            .padding(self.sp(30.0)),
+            .spacing(self.sp(8.0)),
         )
         .into()
     }
