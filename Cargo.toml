@@ -2,7 +2,7 @@
 members = [".", "page-poker"]
 
 [package]
-name = "iced-on-ice"
+name = "iced-tour"
 version = "0.1.0"
 edition = "2024"
 
