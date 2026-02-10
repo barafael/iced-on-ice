@@ -1,7 +1,8 @@
 use iced::{
-    widget::{button, column, row, scrollable, space, text},
+    widget::{column, row, scrollable, space, text},
     Element,
 };
+use iced_anim::widget::button;
 
 use crate::{App, Message, TEXT_SIZE};
 

@@ -1,5 +1,5 @@
 use iced::{
-    Element, Padding,
+    Element,
     widget::{column, scrollable, space, svg},
 };
 

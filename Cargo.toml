@@ -17,12 +17,13 @@ iced = { version = "0.14", features = [
   "wayland",
   "x11",
 ] }
-iced_anim = { version = "0.3", features = ["derive"] }
+iced_anim = { version = "0.3", features = ["derive", "widgets"] }
 rand = "0.9"
 lucide-icons = { version = "0.563.0", features = ["iced"] }
 strum = { version = "0.27", features = ["derive"] }
 rotalubat = "1.0.3"
 iced_term = "0.7.0"
+iced_aw = { version = "0.13.0", default-features = false, features = ["color_picker"] }
 
 [profile.release]
 opt-level = "s"

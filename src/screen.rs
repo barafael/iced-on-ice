@@ -38,48 +38,51 @@ pub enum Screen {
     #[strum(serialize = "8. Styling Widgets")]
     Theming,
 
+    #[strum(serialize = "9. Theming")]
+    ThemePicker,
+
     // Back to Elm Architecture
-    #[strum(serialize = "9. Message")]
+    #[strum(serialize = "10. Message")]
     Message,
 
-    #[strum(serialize = "10. Variants as Constructors")]
+    #[strum(serialize = "11. Variants as Constructors")]
     Constructors,
 
-    #[strum(serialize = "11. Update")]
+    #[strum(serialize = "12. Update")]
     Update,
 
-    #[strum(serialize = "12. Tasks")]
+    #[strum(serialize = "13. Tasks")]
     Tasks,
 
-    #[strum(serialize = "13. Subscriptions")]
+    #[strum(serialize = "14. Subscriptions")]
     Subscriptions,
 
     // Demo
-    #[strum(serialize = "14. Page Poker")]
+    #[strum(serialize = "15. Page Poker")]
     Interactive,
 
     // Community
-    #[strum(serialize = "15. Community Widgets")]
+    #[strum(serialize = "16. Community Widgets")]
     CommunityWidgets,
 
     // Quizzes
-    #[strum(serialize = "16. Quiz: Where Does Logic Live?")]
+    #[strum(serialize = "17. Quiz: Where Does Logic Live?")]
     Quiz,
 
-    #[strum(serialize = "17. Quiz: Async Operations")]
+    #[strum(serialize = "18. Quiz: Async Operations")]
     QuizHttp,
 
-    #[strum(serialize = "18. Quiz: Conditional UI")]
+    #[strum(serialize = "19. Quiz: Conditional UI")]
     QuizButton,
 
-    #[strum(serialize = "19. Quiz: Validation Flow")]
+    #[strum(serialize = "20. Quiz: Validation Flow")]
     QuizValidation,
 
     // Recap
-    #[strum(serialize = "20. Key Takeaways")]
+    #[strum(serialize = "21. Key Takeaways")]
     Takeaways,
 
-    #[strum(serialize = "21. Recap")]
+    #[strum(serialize = "22. Recap")]
     Recap,
 }
 

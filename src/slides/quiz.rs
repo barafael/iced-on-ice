@@ -1,8 +1,10 @@
 use iced::{
     Border, Color, Shadow, Theme,
-    widget::{button, column, container, row, space, text},
+    widget::{column, container, row, space, text},
+    widget::button as iced_button,
     Element,
 };
+use iced_anim::widget::button;
 use lucide_icons::iced::{icon_circle_check, icon_circle_x};
 
 use crate::{App, CORRECT_COLOR, FIRA_MONO, INCORRECT_COLOR, Message, ORANGE, SUBTITLE_COLOR};
@@ -17,7 +19,7 @@ fn wwm_style(
     is_selected: bool,
     is_correct: bool,
     answered: bool,
-) -> impl Fn(&Theme, button::Status) -> button::Style {
+) -> impl Fn(&Theme, iced_button::Status) -> iced_button::Style {
     move |_theme, status| {
         let border = Border {
             width: 1.5,
@@ -28,11 +30,11 @@ fn wwm_style(
         if !answered {
             // Not answered yet — normal WWM style
             let bg = match status {
-                button::Status::Hovered => WWM_BG_HOVER,
-                button::Status::Pressed => WWM_BG,
+                iced_button::Status::Hovered => WWM_BG_HOVER,
+                iced_button::Status::Pressed => WWM_BG,
                 _ => WWM_BG,
             };
-            button::Style {
+            iced_button::Style {
                 background: Some(bg.into()),
                 text_color: Color::WHITE,
                 border,
@@ -41,7 +43,7 @@ fn wwm_style(
             }
         } else if is_selected && is_correct {
             // Picked this, and it's correct → green
-            button::Style {
+            iced_button::Style {
                 background: Some(CORRECT_COLOR.into()),
                 text_color: Color::WHITE,
                 border: Border { color: CORRECT_COLOR, ..border },
@@ -50,7 +52,7 @@ fn wwm_style(
             }
         } else if is_selected && !is_correct {
             // Picked this, but it's wrong → red
-            button::Style {
+            iced_button::Style {
                 background: Some(INCORRECT_COLOR.into()),
                 text_color: Color::WHITE,
                 border: Border { color: INCORRECT_COLOR, ..border },
@@ -59,7 +61,7 @@ fn wwm_style(
             }
         } else if !is_selected && is_correct {
             // Not picked, but this is the correct answer → reveal green
-            button::Style {
+            iced_button::Style {
                 background: Some(Color::from_rgba(0.18, 0.65, 0.35, 0.7).into()),
                 text_color: Color::WHITE,
                 border: Border { color: CORRECT_COLOR, ..border },
@@ -68,7 +70,7 @@ fn wwm_style(
             }
         } else {
             // Not picked, not correct → dim
-            button::Style {
+            iced_button::Style {
                 background: Some(WWM_BG_DIMMED.into()),
                 text_color: Color::from_rgba(1.0, 1.0, 1.0, 0.4),
                 border: Border {

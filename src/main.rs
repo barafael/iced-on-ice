@@ -1,10 +1,10 @@
 use iced::{
     Color, Element, Event, Font, Padding, Subscription, Task, Theme, event, keyboard,
     widget::{
-        button, canvas, column, container, markdown, pick_list, row, space, stack, text, themer,
+        canvas, column, container, markdown, pick_list, row, space, stack, text, themer,
     },
 };
-use iced_anim::{Animated, Animation, Motion};
+use iced_anim::{Animated, Animation, Motion, widget::button};
 use lucide_icons::{
     LUCIDE_FONT_BYTES,
     iced::{icon_chevron_left, icon_chevron_right},
@@ -50,6 +50,8 @@ pub struct App {
     pub demo_input: String,
     pub demo_spacing: f32,
     pub demo_padding: f32,
+    pub hover_color: Color,
+    pub show_color_picker: bool,
     pub quiz_answer: Option<u8>,
     pub quiz_http_answer: Option<u8>,
     pub quiz_button_answer: Option<u8>,
@@ -60,7 +62,6 @@ pub struct App {
     pub md_intro: Vec<markdown::Item>,
     pub md_model: Vec<markdown::Item>,
     pub md_view: Vec<markdown::Item>,
-    pub md_theme: Vec<markdown::Item>,
     pub md_row_col: Vec<markdown::Item>,
     pub md_container: Vec<markdown::Item>,
     pub md_spacing: Vec<markdown::Item>,
@@ -98,6 +99,8 @@ impl Default for App {
             demo_input: String::new(),
             demo_spacing: 10.0,
             demo_padding: 10.0,
+            hover_color: Color::from_rgb(0.3, 0.7, 1.0),
+            show_color_picker: false,
             quiz_answer: None,
             quiz_http_answer: None,
             quiz_button_answer: None,
@@ -106,7 +109,6 @@ impl Default for App {
             md_intro: markdown::parse(intro::MD_INTRO).collect(),
             md_model: markdown::parse(model::MD_MODEL).collect(),
             md_view: markdown::parse(view::MD_VIEW).collect(),
-            md_theme: markdown::parse(view::MD_THEME).collect(),
             md_row_col: markdown::parse(layout::MD_ROW_COL).collect(),
             md_container: markdown::parse(layout::MD_CONTAINER).collect(),
             md_spacing: markdown::parse(layout::MD_SPACING).collect(),
@@ -160,6 +162,9 @@ pub enum Message {
     DemoInputSubmitted,
     DemoSpacingChanged(f32),
     DemoPaddingChanged(f32),
+    OpenColorPicker,
+    SubmitHoverColor(Color),
+    CancelColorPicker,
 
     // Animation
     SlideOffset(iced_anim::Event<sliding::SlideOffset>),
@@ -194,6 +199,7 @@ fn main() -> iced::Result {
         .subscription(App::subscription)
         .antialiasing(true)
         .font(LUCIDE_FONT_BYTES)
+        .font(iced_aw::ICED_AW_FONT_BYTES)
         .font(include_bytes!("../fonts/Bitter-Regular.ttf"))
         .font(include_bytes!("../fonts/FiraMono-Regular.ttf"))
         .default_font(BITTER)
@@ -317,6 +323,19 @@ impl App {
                 self.demo_padding = val;
                 Task::none()
             }
+            Message::OpenColorPicker => {
+                self.show_color_picker = true;
+                Task::none()
+            }
+            Message::SubmitHoverColor(color) => {
+                self.hover_color = color;
+                self.show_color_picker = false;
+                Task::none()
+            }
+            Message::CancelColorPicker => {
+                self.show_color_picker = false;
+                Task::none()
+            }
             Message::ThemeChanged(theme) => {
                 self.theme = theme;
                 Task::none()
@@ -400,6 +419,7 @@ impl App {
             Screen::Button => self.view_button_screen(),
             Screen::TextInput => self.view_text_input_screen(),
             Screen::Theming => self.view_theming_screen(),
+            Screen::ThemePicker => self.view_theme_picker_screen(),
             Screen::Message => self.view_message_screen(),
             Screen::Constructors => self.view_constructors_screen(),
             Screen::Update => self.view_update_screen(),

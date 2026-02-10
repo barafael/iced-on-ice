@@ -32,7 +32,9 @@
       "Bash(echo:*)",
       "Bash(cargo:*)",
       "Bash(powershell.exe:*)",
-      "Bash(/usr/bin/env bash -c \"echo hello\")"
+      "Bash(/usr/bin/env bash -c \"echo hello\")",
+      "WebFetch(domain:api.github.com)",
+      "Bash(Out-String)"
     ]
   }
 }
